@@ -6,10 +6,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\loginModel;
-use App\Models\postNotice;
-use App\Exports\UsersExport;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Models\requestsModel;
 use App\Models\usersModel;
 use Illuminate\Http\Request;
 
@@ -232,9 +228,6 @@ class adminAPI extends Controller
 
     public function loginVarify(Request $req)
     {
-
-
-
         $validator = Validator::make($req->all(), [
 
             'user_name' => ['required'],
@@ -303,107 +296,5 @@ class adminAPI extends Controller
             }
         }
     }
-//     public function clientReq()
-//     {
-//         $request = requestsModel::where('status', 'Pending')->get();
-//         return response()->json([
-//             'status' => 200,
-//             'requests' => $request,
-//         ]);
-//     }
 
-//     public function clientReqOperation($id)
-//     {
-//         $request = requestsModel::find($id);
-//         $request->status = 'Approved';
-//         $request->save();
-//         return response()->json([
-//             'status' => 200,
-//         ]);
-//     }
-
-//     public function postNoticesOperation(Request $req, $id)
-//     {
-//         $validator = Validator::make($req->all(), [
-
-//             'subject' => ['required'],
-//             'description' => ['required'],
-
-//         ]);
-//         if ($validator->fails()) {
-//             return response()->json([
-//                 'status' => 201,
-//                 'error' => $validator->errors(),
-//             ]);
-//         } else {
-//             $post = new postNotice;
-//             $post->id = $id;
-//             $post->subject = $req->subject;
-//             $post->description = $req->description;
-//             $CONFIRMATION = $post->save();
-
-//             if ($CONFIRMATION) {
-
-//                 return response()->json([
-//                     'status' => 200,
-//                 ]);
-//             } else {
-
-//                 return response()->json([
-//                     'status' => 201,
-//                 ]);
-//             }
-//         }
-//     }
-//     public function changePasswordOperation(Request $req, $id)
-//     {
-//         $validator = Validator::make($req->all(), [
-//             'current_password' => [
-//                 'required'
-//             ],
-//             'new_password' => [
-//                 'required',
-//                 'min:8',
-//                 'regex:/[a-z]/',
-//                 'regex:/[A-Z]/',
-//                 'regex:/[0-9]/',
-//                 'regex:/[@$!%*#?&]/',
-//             ],
-//             'confirm_password' => ['required', 'same:new_password']
-
-
-//         ]);
-//         if ($validator->fails()) {
-//             return response()->json([
-//                 'status' => 201,
-//                 'error' => $validator->errors(),
-//             ]);
-//         } else {
-//             $password = usersModel::find($id)->login;
-
-//             if (Hash::check($req->current_password, $password['password'])) {
-//                 $user = loginModel::find($id);
-//                 $user->password = bcrypt($req->confirm_password);
-//                 $user->save();
-
-//                 return response()->json([
-//                     'status' => 200,
-//                 ]);
-//             } else {
-
-//                 return response()->json([
-//                     'status' => 201,
-//                     'error' => "Current Password Incorrect"
-//                 ]);
-//             }
-//         }
-//     }
-//     public function export()
-
-//     {
-//         return response()->json([
-//             'status' => 200,
-//             'file' => Excel::download(new UsersExport, 'allUser.xlsx')
-//         ]);
-//     }
 }
