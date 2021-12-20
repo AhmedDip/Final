@@ -1,0 +1,182 @@
+body{
+  background-color: #f4f3f9;
+}
+input , select {
+    margin: 10px 0px 10px 0px;
+}
+.login-form-bg{
+   height: 100vh !important;
+   margin-top: 8%  !important;
+}
+.signinlink{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:green;
+    cursor: pointer;
+}
+
+/* Sidber */
+
+.sidebar {
+    font-size: 15px !important;
+    margin: 0px 25px 0px 0px;
+    padding: 0;
+    left: 0;
+    width: 200px;
+    background-color: #0a0b0c;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    transition: 0.5s all ease-out !important;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    margin: 15px 0px 15px 0px;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background: linear-gradient(45deg,#e66465, #141415);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+  }
+  div.content {
+    
+    margin-left: 12%;
+    padding: 1px 16px;
+   
+  }
+  div.content .card {
+    margin: 100px 0px 20px 0px;
+
+  }
+ 
+  div.content .card table tr td {
+    font-weight: 500;
+    text-transform: uppercase
+    ;
+  }
+ 
+ 
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background: linear-gradient(45deg,#314755, #26a0da);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+  }
+
+
+/* Dashboard */
+.gradient-1{
+    background: linear-gradient(45deg,#314755, #26a0da);
+   
+    
+}
+.gradient-2{
+    background: linear-gradient(45deg,#2193b0, #6dd5ed);
+   
+    
+}
+.gradient-3{
+    background: linear-gradient(45deg,#cc2b5e, #753a88);
+   
+    
+}
+.gradient-4{
+    background: linear-gradient(45deg,#9796f0, #fbc7d4);
+   
+    
+}
+.card_in_dashboard{
+  min-height: 100% !important;
+  
+  border: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.head{
+    font-size: 2rem;
+    text-align: center;
+  background: -webkit-linear-gradient(#fc4a1a, #f7b733);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    div.content {
+      margin-left: 0;
+    }
+   
+    .gradient-2{
+     margin: 15px 0px 15px 0px;
+      
+  }
+  .gradient-3{
+     margin: 15px 0px 15px 0px;
+   }
+     
+    .sidebar a {
+     margin: 0;
+    }
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+    .content .carddd{
+      margin: 10px 0px 20px 0px !important;
+     
+    }
+    .gradient-4{
+      background: linear-gradient(45deg,#314755, #26a0da) !important;
+      margin-bottom: 15px !important;
+    }
+      
+
+  }  
