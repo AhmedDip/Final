@@ -25,8 +25,7 @@ const Login = () => {
     const onsubmit = (e) => {
         e.preventDefault();
         load();
-        //console.log(userData);
-        // delete data.confirm_password
+       
     }
     const load = async () => {
         const res = await axios.post("http://127.0.0.1:8000/api/signin", JSON.stringify(userData), { headers: { "Content-Type": "application/json" } })
