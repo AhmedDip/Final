@@ -45,14 +45,10 @@ const Login = () => {
                             window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
                             history.push('/dashboard');
                         } else if (response.data.user.user_type === 'teacher') {
-                            window.sessionStorage.setItem('status', 'true');
-                            window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
-                            history.push('/teacher_dashboard');
+                            
                         } 
                           else if (response.data.user.user_type === 'student') {
-                             window.sessionStorage.setItem('status', 'true');
-                             window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
-                             history.push('/student_dashboard');
+                           
                     }
                     }
 
