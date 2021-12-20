@@ -45,18 +45,15 @@ const Login = () => {
                             window.sessionStorage.setItem('status', 'true');
                             window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
                             history.push('/dashboard');
-                        } else if (response.data.user.user_type === 'clients') {
+                        } else if (response.data.user.user_type === 'teacher') {
                             window.sessionStorage.setItem('status', 'true');
                             window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
-                            history.push('/client_dashboard');
-                        } else if (response.data.user.user_type === 'bank_maneger') {
-                            //code
-                        }
-
-                            else if (response.data.user.user_type === 'money_exchange_officer') {
+                            history.push('/teacher_dashboard');
+                        } 
+                          else if (response.data.user.user_type === 'student') {
                              window.sessionStorage.setItem('status', 'true');
                              window.sessionStorage.setItem('user', JSON.stringify(response.data.user));
-                             history.push('/meo_dashboard');
+                             history.push('/student_dashboard');
                     }
                     }
 
